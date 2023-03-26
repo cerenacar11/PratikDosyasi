@@ -1,0 +1,83 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        double a,b,c,x;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Ceren'in Masrafı: ");
+        a = inp.nextDouble();
+        System.out.print("Yağmur'un Masrafı: ");
+        b = inp.nextDouble();
+        System.out.print("Ece'nin Masrafı: ");
+        c = inp.nextDouble();
+        x = (a + b + c) / 3;
+        System.out.print("Kişi Başı Ödenmesi Gereken Tutar: " + x );
+
+        if ((a>b)&&(a>c)){
+            if (b>c){
+                if (b>x){
+                    System.out.println("\nEce'nin Yağmur'a Vereceği Tutar: " + (b-x));
+                    System.out.println("Ece'nin Ceren'e Vereceği Tutar: " + (a-x));
+                }else {
+                    System.out.println("\nYağmur'un Ceren'e Vereceği Tutar: " + (x-b));
+                    System.out.println("Ece'nin Ceren'e Vereceği Tutar: " + (x-c));
+                }
+            }else if (c>b) {
+                if (c>x){
+                    System.out.println("\nYağmur'un Ece'ye Vereceği Tutar: " + (c-x));
+                    System.out.println("Yağmur'un Ceren'e Vereceği Tutar:" + (a-x));
+                }else {
+                    System.out.println("\nYağmur'un Ceren'e Vereceği Tutar: " + (x-b));
+                    System.out.println("Ece'nin Ceren'e Vereceği Tutar: " + (x-c));
+                }
+            }else {
+                System.out.println("\nYağmur'un Ceren'e Vereceği Tutar: " + (x-b));
+                System.out.println("Ece'nin Ceren'e Vereceği Tutar: " + (x-c));
+            }
+        }if ((b>a)&&(b>c)){
+            if (a>c){
+                if (a>x){
+                    System.out.println("\nEce'nin Ceren'e Vereceği Tutar: " + (a-x));
+                    System.out.println("Ece'nin Yağmur'a Vereceği Tutar: " + (b-x));
+                }else {
+                    System.out.println("\nCeren'in Yağmur'a Vereceği Tutar: " + (x-a));
+                    System.out.println("Ece'nin Yağmur'a Vereceği Tutar: " + (x-c));
+                }
+            }else if (c>a){
+                if (c>x){
+                    System.out.println("\nCeren'in Yağmur'a Vereceği Tutar: " + (b-x));
+                    System.out.println("Ceren'in Ece'ye Vereceği Tutar: " + (c-x));
+                }else {
+                    System.out.println("\nCeren'in Yağmur'a Vereceği Tutar: " + (x-a));
+                    System.out.println("Ece'nin Yağmur'a Vereceği Tutar: " + (x-c));
+                }
+            }else {
+                System.out.println("\nEce'nin Yağmur'a Vereceği Tutar: " + (x-c));
+                System.out.println("Ceren'in Yağmur'a Vereceği Tutar: " + (x-a));
+            }
+        }if ((c>a)&&(c>b)){
+            if (a>b){
+                if (a>x){
+                    System.out.println("\nYağmur'un Ceren'e Vereceği Tutar: " + (a-x));
+                    System.out.println("Yağmur'un Ece'ye Vereceği Tutar: " + (c-x));
+                }else {
+                    System.out.println("\nCeren'in Ece'ye Vereceği Tutar: " + (x-a));
+                    System.out.println("Yağmur'un Ece'ye Vereceği Tutar: " + (x-b));
+                }
+            }else if (b>a){
+                if (b>x){
+                    System.out.println("\nCeren'in Yağmur'a Vereceği Tutar: " + (b-x));
+                    System.out.println("Ceren'in Ece'ye Vereceği Tutar: " + (c-x));
+                }else {
+                    System.out.println("\nCeren'in Ece'ye Vereceği Tutar: " + (x-a));
+                    System.out.println("Yağmur'un Ece'ye Vereceği Tutar: " + (x-b));
+                }
+            }else {
+                System.out.println("\nCeren'in Ece'ye Vereceği Tutar: " + (x-a));
+                System.out.println("Yağmur'un Ece'ye Vereceği Tutar: " + (x-b));
+            }
+        }
+        else if ((a==b)&&(a==c)){
+            System.out.println("\nMasraflar Eşittir.");
+        }
+    }
+}
